@@ -112,6 +112,17 @@ class Teacher(models.Model):
     def __str__(self):
         return self.name
 
+class Notification(models.Model):
+    id = models.CharField(primary_key='True', max_length=100)
+    class_id = models.ForeignKey(Class, on_delete=models.CASCADE, default=1)
+    sent_by = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    content = models.TextField()
+
+    class Meta:
+        verbose_name_plural = 'notifications'
+
+    def __str__(self):
+        return '{}..'.format(self.content[:10]) 
 
 class Assign(models.Model):
     class_id = models.ForeignKey(Class, on_delete=models.CASCADE)

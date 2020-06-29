@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Dept, Class, Student, Attendance, Course, Teacher, Assign, AssignTime, AttendanceClass
+from .models import Dept, Class, Student, Attendance, Course, Teacher, Assign, AssignTime, AttendanceClass, Notification
 from .models import AttendanceTotal, StudentCourse, Marks, MarksClass, User
 from django.contrib.auth.admin import UserAdmin
 # Register your models here.
@@ -80,3 +80,4 @@ admin.site.register(Course, CourseAdmin)
 admin.site.register(Teacher, TeacherAdmin)
 admin.site.register(Assign, AssignAdmin)
 admin.site.register(StudentCourse, StudentCourseAdmin)
+admin.site.register(Notification)
